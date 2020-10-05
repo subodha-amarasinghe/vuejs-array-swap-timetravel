@@ -1,4 +1,4 @@
-# gapstars-vue-challenge
+# vuejs-array-swap-timetravel
 
 ## Project setup
 ```
