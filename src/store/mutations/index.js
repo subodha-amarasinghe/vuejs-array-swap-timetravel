@@ -29,7 +29,6 @@ export default {
             let temp = postList[commitHistoty[i].to]
             postList[commitHistoty[i].to]=postList[commitHistoty[i].from]
             postList[commitHistoty[i].from]=temp
-            console.log("POST_LOIST", postList)
         }
         state.postList=postList;
         state.commitHistoty=state.commitHistoty.filter((h, i) => i>index)
