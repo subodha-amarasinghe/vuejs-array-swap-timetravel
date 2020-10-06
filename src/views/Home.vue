@@ -1,10 +1,10 @@
 <template>
-  <div class="app-container">
-      <div class="row">
-          <div class="col">
+  <div class="container mx-auto">
+      <div class="grid grid-flow-row sm:grid-flow-row md:grid-flow-row-dense lg:grid-flow-col-dense xl:grid-flow-col">
+          <div class="row-auto">
               <PostList />
           </div>
-          <div class="col">
+          <div class="row-auto">
               <CommitedActions />
           </div>
       </div>
@@ -21,24 +21,5 @@ export default {
 </script>
 
 <style>
-.app-container {
-    max-width: 1280px;
-    width: 100%;
-    margin: auto;
-}
-.row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-    flex-direction: row;
-}
-.col {
-    flex:1
-}
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-}
+
 </style>

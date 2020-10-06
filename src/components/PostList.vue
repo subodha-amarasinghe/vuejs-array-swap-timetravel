@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <h2>Sortable Post List</h2>
+  <div class="p-4">
+    <h2 class="text-2xl mb-4 p-4 text-blue-800">Sortable Post List</h2>
     <div>
         <div v-for="(post, index) in postList" :key="post.id">
-            <div class="card">
+            <div class="bg-gray-100 flex items-center justify-between m-4 p-4 text-blue-800">
                 <div>{{post.id}}. {{post.title}}</div>
-                <div>
+                <div class="ml-4">
                     <div v-if="index>0">
-                        <button class="swap-btn" v-on:click="swapPost(post, index, index-1)">&uarr;</button>
+                        <button class="hover:bg-blue-300 py-2 px-4 rounded font-black" v-on:click="swapPost(post, index, index-1)">&uarr;</button>
                     </div>
                     
                     <div v-if="index < (postList.length-1)">
-                        <button  class="swap-btn" v-on:click="swapPost(post, index, index+1)">&darr;</button>
+                        <button  class="hover:bg-blue-300 py-2 px-4 rounded font-black" v-on:click="swapPost(post, index, index+1)">&darr;</button>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,6 @@ export default {
           this.$store.dispatch("getAllPosts")
       },
       swapPost(post, from, to ) {
-          console.log("Move", from, "to", to, post );
           this.$store.dispatch("swapPost", {post:post, from:from, to:to});
       }
   },
@@ -49,20 +48,5 @@ export default {
 </script>
 
 <style>
-.card {
-    padding: 20px 10px;
-    border: 1px solid #aaa;
-    width: 80%;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.swap-btn {
-    margin: 5px;
-}
-@media (max-width: 768px) {
-  .card {
-    width: auto;
-  }
-}
+
 </style>
