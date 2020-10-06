@@ -8,22 +8,23 @@ localVue.use(Vuex);
 describe('PostList.vue', () => {
     let actions;
     let store;
-  
+
+
     // add this before each
     beforeEach(() => {
-      actions = {
-        getAllPosts: jest.fn(),
-        swapPost: jest.fn(),
-      };
-      store = new Vuex.Store({
-        state: {},
-        actions
-      });
+        actions = {
+            getAllPosts: jest.fn(),
+            swapPost: jest.fn(),
+        };
+        store = new Vuex.Store({
+            state: {},
+            actions
+        });
     })
     it('should dispatch action when created', () => {
         shallowMount(PostList, {
-          localVue,
-          store
+            localVue,
+            store
         });
         expect(actions.getAllPosts).toHaveBeenCalled();
     });
