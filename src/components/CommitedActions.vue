@@ -4,7 +4,7 @@
     <div>
         <div v-for="(item, index) in historyList" :key="index">
             <div class="card">
-                <div>Moved {{item.post.id}} from index {{item.from}} to {{item.to}}</div>
+                <div>Moved Post No. {{item.post.id}} from index {{item.from}} to {{item.to}}</div>
                 <div>
                     <button v-on:click="timeTravel(index)">Time Travel</button>
                 </div>

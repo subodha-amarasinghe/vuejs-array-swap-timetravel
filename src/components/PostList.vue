@@ -25,9 +25,13 @@
 export default {
   name: 'PostList',
   mounted() {
-      this.$store.dispatch("getAllPosts")
+      this.fecthPosts()
   },
+
   methods: {
+      fecthPosts() {
+          this.$store.dispatch("getAllPosts")
+      },
       swapPost(post, from, to ) {
           console.log("Move", from, "to", to, post );
           this.$store.dispatch("swapPost", {post:post, from:from, to:to});
