@@ -17,7 +17,9 @@ describe('PostList.vue', () => {
             swapPost: jest.fn(),
         };
         store = new Vuex.Store({
-            state: {},
+            state: {
+                PostList:[]
+            },
             actions
         });
     })
