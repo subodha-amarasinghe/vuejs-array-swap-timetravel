@@ -15,7 +15,7 @@ export default {
         state.postListErrordata=data
     },
     SWAP_POST(state, data) {
-        let list=[...state.postList]
+        let list=state.postList
         let temp = list[data.from]
         list[data.from]=list[data.to]
         list[data.to]=temp
@@ -23,14 +23,14 @@ export default {
         state.commitHistoty=[...[data], ...state.commitHistoty]
     },
     TIME_TRAVEL(state, index) {
-        let postList=[...state.postList]
-        let commitHistoty=[...state.commitHistoty]
+        let postList=state.postList
+        let commitHistoty=state.commitHistoty?state.commitHistoty:[]
         for (let i=0; i<=index; i++) {
             let temp = postList[commitHistoty[i].to]
             postList[commitHistoty[i].to]=postList[commitHistoty[i].from]
             postList[commitHistoty[i].from]=temp
         }
         state.postList=postList;
-        state.commitHistoty=state.commitHistoty.filter((h, i) => i>index)
+        state.commitHistoty=commitHistoty.splice(index+1)
     }
 }
